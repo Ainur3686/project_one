@@ -20,3 +20,19 @@ def move(board, mark, position):
     board = board[0:position]+ mark + board[position + 1:]
     #returning the updated board
     return board
+
+#Step3. Created a 'player_move' function (board, asks position), returns the updated board. 
+def player_move(board):
+    #Returns a game board with the player's move
+    mark = "x"
+
+    #Create an infinite loop
+    while True:
+        #asking player's position, and converting to integer
+        position = int(input("Which position do you want to play?: "))
+
+        #checking if the position in range of the board and not occupied
+        if position in range(0, len(board)) and board[position] == "-":
+            #using the 'move' function to put 'mark' on the selected 'position'
+            #return the updated board and terminating the 'while' loop
+            return move(board, mark, position)
