@@ -49,3 +49,18 @@ def pc_move(board):
         if position in range(0, len(board)) and board[position] == "-":
             #using the 'move' function to put pc_move ('mark') on the selected random 'position'
             return move(board, mark, position)   #return the updated board  
+        
+#Step 5. Created OneD_tictactoe function which creates a board and alternately calls for the 'player' or 'pc' moves, returns updated board until someone wins or draw.
+def OneD_tictactoe():
+    board="-"*20
+    print(board)
+    while True:
+        board=player_move(board)
+        print(board)
+        if evaluate(board) !="-":
+           break
+        board=pc_move(board)
+        print(board)
+        if evaluate(board) != "-":
+           break
+OneD_tictactoe()
