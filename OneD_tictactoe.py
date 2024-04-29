@@ -36,3 +36,16 @@ def player_move(board):
             #using the 'move' function to put 'mark' on the selected 'position'
             #return the updated board and terminating the 'while' loop
             return move(board, mark, position)
+        
+#Step4. Created a 'pc_move' function(board with a selected position), returns updated board.
+def pc_move(board):
+   #Returns a game board with the computer's move
+   mark = "o"
+   
+   while True:
+        from random import randrange
+        position=randrange(0,20) #positions: 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+        #selecting random 'position' from 0 to 19
+        if position in range(0, len(board)) and board[position] == "-":
+            #using the 'move' function to put pc_move ('mark') on the selected random 'position'
+            return move(board, mark, position)   #return the updated board  
